@@ -23,16 +23,16 @@ async function getData() {
 };
 
 export default async function Home() {
-  const blogs = await getData();
+  // const blogs = await getData();
 
   return (
     <div suppressHydrationWarning >
       <HeroSection />
+      {/* <Skills /> */}
       <AboutSection />
       <Experience />
-      <Skills />
       <Projects />
-      <Education />
+      {/* <Education /> */}
       {/* <Blog blogs={blogs} /> */}
       <ContactSection />
     </div>
