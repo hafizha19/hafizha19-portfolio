@@ -1,7 +1,7 @@
 export const projectsData = [
     {
         id: 1,
-        name: 'HRMS',
+        name: 'HRMS (10)',
         description: "Build end to end HR product and customize it for almost 10 clients, manage teams, breakdown modules to tasks, etc.",
         tools: ['Mongo DB', 'My SQL', 'Java Spring Boot', 'Python FastAPI', 'PHP Laravel', 'AWS', 'Microservices', 'Atlas Search', 'SNS'],
         role: 'Senior Backend Developer',
@@ -10,7 +10,7 @@ export const projectsData = [
     },
     {
         id: 2,
-        name: 'E-Commerce',
+        name: 'E-Commerce (4)',
         description: 'Build E-Commerce website for 4 clients, handle automation mail management.',
         tools: ['PHP Magento', 'Shopware', 'Laravel', 'Next JS'],
         role: 'Associate Software Engineer',

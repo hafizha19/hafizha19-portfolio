@@ -22,19 +22,24 @@ function ProjectCard({ project }) {
       <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8">
         <code className="font-mono text-xs md:text-sm lg:text-base">
           <div className="blink">
-            <span className="mr-2 text-white">project</span>
-            <span className="mr-2 text-pink-500">=</span>
+            <span className="mr-2 text-white">{`"project"`}</span>
+            <span className="mr-2 text-pink-500">:</span>
             <span className="text-gray-400">{"{"}</span>
           </div>
           <div>
-            <span className="ml-4 lg:ml-8 mr-2 text-white">"name":</span>
+            <span className="ml-4 lg:ml-8 mr-2 text-white">{`"name"`}:</span>
             <span className="text-gray-400">{`"`}</span>
             <span className="text-amber-300">{project.name}</span>
             <span className="text-gray-400">{`",`}</span>
           </div>
-
+          <div>
+            <span className="ml-4 lg:ml-8 mr-2 text-white">{`"role"`}:</span>
+            <span className="text-gray-400">{` "`}</span>
+            <span className="text-amber-400">{project.role}</span>
+            <span className="text-gray-400">{`",`}</span>
+          </div>
           <div className="ml-4 lg:ml-8 mr-2">
-            <span className=" text-white">"tools":</span>
+            <span className=" text-white">{`"tools"`}:</span>
             <span className="text-gray-400">{` ["`}</span>
             {project.tools.map((tag, i) => (
               <React.Fragment key={i}>
@@ -46,21 +51,15 @@ function ProjectCard({ project }) {
             ))}
             <span className="text-gray-400">{"],"}</span>
           </div>
-          <div>
-            <span className="ml-4 lg:ml-8 mr-2 text-white">"role":</span>
-            <span className="text-gray-400">{` "`}</span>
-            <span className="text-orange-400">{project.role}</span>
-            <span className="text-gray-400">{`",`}</span>
-          </div>
           <div className="ml-4 lg:ml-8 mr-2">
-            <span className="text-white">"description":</span>
+            <span className="text-white">{`"description`}:</span>
             <span className="text-gray-400">{` "`}</span>
             <span className="text-amber-300">{project.description}</span>
             <span className="text-gray-400">{`",`}</span>
           </div>
           {project.demo && (
             <div className="ml-4 lg:ml-8 mr-2">
-              <span className="text-white">"demo_example":</span>
+              <span className="text-white">{`"demo_example"`}:</span>
               <span className="text-gray-400">{` "`}</span>
               <a href={`${project.demo}`}>
                 <span className="text-cyan-400">{`${project.demo}`}</span>
@@ -69,7 +68,7 @@ function ProjectCard({ project }) {
             </div>
           )}
           <div>
-            <span className="text-gray-400">{`};`}</span>
+            <span className="text-gray-400">{`}`}</span>
           </div>
         </code>
       </div>
