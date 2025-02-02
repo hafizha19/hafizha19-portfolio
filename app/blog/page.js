@@ -2,16 +2,17 @@
 
 import { personalData } from "@/utils/data/personal-data";
 import BlogCard from "../components/homepage/blog/blog-card";
+import Parser from 'rss-parser'
 
 async function getBlogs() {
-  const res = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`)
+  const parser = new Parser();
+  const feed = await parser.parseURL('https://medium.com/feed/@mzhaaf');
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
+  if (!feed.items) {
+    throw new Error('Failed to fetch data');
   }
 
-  const data = await res.json();
-  return data;
+  return feed.items;
 };
 
 async function page() {
@@ -32,7 +33,7 @@ async function page() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 lg:gap-8 xl:gap-10">
         {
           blogs.map((blog, i) => (
-            blog?.cover_image &&
+            // blog?.cover_image &&
             <BlogCard blog={blog} key={i} />
           ))
         }

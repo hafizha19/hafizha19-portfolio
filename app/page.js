@@ -7,23 +7,24 @@ import Experience from "./components/homepage/experience";
 import HeroSection from "./components/homepage/hero-section";
 import Projects from "./components/homepage/projects";
 import Skills from "./components/homepage/skills";
+import Parser from 'rss-parser'
 
 async function getData() {
-  const res = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`)
+  const parser = new Parser();
+  const feed = await parser.parseURL('https://medium.com/feed/@mzhaaf');
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
+  if (!feed.items) {
+    throw new Error('Failed to fetch data');
   }
 
-  const data = await res.json();
+  const blogs = feed.items
+  .slice(0, 3);
 
-  const filtered = data.filter((item) => item?.cover_image).sort(() => Math.random() - 0.5);
-
-  return filtered;
+  return blogs;
 };
 
 export default async function Home() {
-  // const blogs = await getData();
+  const blogs = await getData();
 
   return (
     <div suppressHydrationWarning >
@@ -32,8 +33,8 @@ export default async function Home() {
       <AboutSection />
       <Experience />
       <Projects />
-      {/* <Education /> */}
-      {/* <Blog blogs={blogs} /> */}
+      <Education />
+      <Blog blogs={blogs} />
       <ContactSection />
     </div>
   )
