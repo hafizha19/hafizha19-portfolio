@@ -33,7 +33,7 @@ export const projectsData = [
         tools: ['Laravel', 'Bootstrap', 'Javascript', 'Reporting'],
         code: '',
         demo: '',
-        role: 'Full Stack Developer',
+        role: 'Full Stack Developer'
     }
 ];
 
