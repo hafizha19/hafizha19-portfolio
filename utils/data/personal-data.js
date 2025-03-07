@@ -1,6 +1,6 @@
 export const personalData = {
   name: "Hafizhatul Kiromi MZ",
-  profile: '/profile.png',
+  profile: '/profile.jpeg',
   designation: "Software and AI Engineer",
   description: "With 5 years of experience in developing software across diverse domains, ",
   descriptionHigh: "I bring a unique combination of technical expertise, strategic business thinking, and a strong ability to deliver innovative solutions to solve complex problems in every project I undertake.",
